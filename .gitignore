@@ -1,0 +1,12 @@
+# Node modules (ne pas publier si tu n'en as pas besoin sur le serveur)
+node_modules/
+
+# Fichiers de lock pour npm
+package-lock.json
+
+# Fichier README (n'est pas nécessaire en production)
+README.md
+
+# Fichiers temporaires ou systèmes
+.DS_Store
+.env

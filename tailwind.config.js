@@ -1,12 +1,7 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
-    content: ["./index.html"],
-    theme: {
-        extend: {
-            colors: {
-                customBeige: "rgb(233, 232, 227)",
-            },
-        },
-    },
-    plugins: [],
+    mode: "jit",
+    purge: [
+        "./index.html",
+    ],
 };

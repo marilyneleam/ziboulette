@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr" class="h-full">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Comprendre l'actualité de façon ludique et accessible">
-	<meta name="keywords" content="Ziboulette, actu ludique, articles divertissants, nouvelles décalées, boulettes amusantes, ZIB, Ziboulettes Incroyablement Bizarres, partage de boulettes, VDM">
+	<meta name="keywords"
+		content="Ziboulette, actu ludique, articles divertissants, nouvelles décalées, boulettes amusantes, ZIB, Ziboulettes Incroyablement Bizarres, partage de boulettes, VDM">
 	<meta name="author" content="Antony Lignac, Marilyne Leam">
 	<meta name="language" content="French">
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://ziboulette.fr">
-	<meta property="og:title" content="Ziboulette, l'actualité qui déboule de façon ludique et accessible quotidiennement tout en partageant vos pires boulettes ZIB (Ziboulettes Incroyablement Bizarres)">
+	<meta property="og:title"
+		content="Ziboulette, l'actualité qui déboule de façon ludique et accessible quotidiennement tout en partageant vos pires boulettes ZIB (Ziboulettes Incroyablement Bizarres)">
 	<meta property="og:description"
 		content="Revenez bientôt pour découvrir un média ludique et accessible sur l'actualité.">
 	<meta property="og:image" content="URL_DE_TON_IMAGE.png">
 
-	<!-- Twitter --> 
+	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:url" content="https://ziboulette.fr/">
 	<meta name="twitter:title" content="Ziboulette - Site en Construction">
@@ -26,26 +29,60 @@
 
 	<title>Ziboulette - Site en construction</title>
 
-	<link rel="stylesheet" href="./dist/output.css">
+	<style>
+		.main {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			flex-grow: 1;
+			justify-content: center;
+			align-content: space-between;
+		}
+
+		.txt {
+			text-align: center;
+		}
+
+		.size {
+			height: auto;
+			max-width: 100%;
+		}
+
+		.screen-size {
+			min-height: 100vh;
+		}
+
+	</style>
+
+	<!-- Chargement asynchrone du fichier Tailwind CSS complet -->
+	<link rel="preload" href="./assets/css/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript>
+		<link rel="stylesheet" href="./assets/css/output.css">
+	</noscript>
+
+	<link rel="stylesheet" href="./assets/css/output.css">
 </head>
-<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen content-between">
+
+<body class="bg-gray-100 main screen-size content-between">
 	<!-- Header block -->
 
 	<!-- Start block -->
-	<main class="flex-grow flex flex-col items-center">
-	<section class="text-center px-4">
-		<div class="max-w-lg mx-auto">
-			<h1 class="text-3xl font-bold text-gray-800 my-12">
-				<span>Ziboulette</span><br>L'actu qui déboule
-			</h1>
-			<img class="w-full h-auto max-w-auto" src="./assets/images/Ziboulette_Construction.webp" alt="Ziboulette est actuellement en construction, articles d'actualité ludique et partage de boulettes">
-			<p class="text-gray-600 my-4">Revenez bientôt pour plus d'infos !</p>
-		</div>
-	</section>
-</main>
+	<main class="main">
+		<section class="txt px-4">
+			<div class="max-w-lg mx-auto">
+				<h1 class="text-3xl font-bold text-gray-800 my-12">
+					Ziboulette<br>L'actu qui déboule
+				</h1>
+				<img width="500" height="500" class="size" src="./assets/images/Ziboulette_Construction.webp"
+					alt="Ziboulette est actuellement en construction, articles d'actualité ludique et partage de boulettes">
+				<p class="text-gray-600 my-4">Revenez bientôt pour plus d'infos !</p>
+			</div>
+		</section>
+	</main>
 	<!-- End block -->
-	<footer class="text-sm text-center py-4">
+	<footer class="text-sm txt py-4">
 		<p>&copy; 2024 Ziboulette.fr - Tous droits réservés</p>
 	</footer>
 </body>
+
 </html>

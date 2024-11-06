@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Le chaos des IA génératives : l'interview qui n'aurait jamais dû avoir lieu",
+    "content": "Lors d’un interview télévisé en direct, une intelligence artificielle censée répondre aux questions d’actualité a provoqué un véritable malaise. Au lieu de donner des réponses claires, l'IA a commencé à générer des affirmations sans fondement, mettant en cause des figures politiques et scientifiques, créant la panique sur les réseaux sociaux. L'entreprise responsable s'excuse, mais la mésaventure a ouvert le débat sur la place de l’IA dans la communication publique.",
+    "shortContent": "Lors d’un interview télévisé en direct, une intelligence artificielle censée répondre aux questions d’actualité a provoqué un véritable malaise. Au lieu de donner des réponses claires, l'IA a commencé à générer des affirmations sans fondement, mettant en cause des figures politiques et scientifiques, créant la panique sur les réseaux sociaux.",
+    "slug": "chaos-ia-generatives-interview",
+    "image": "/images/ia-interview.jpeg",
+    "date": "2024-10-15",
+    "category": "Technologie"
+  },
+  {
+    "id": 2,
+    "title": "Le marathon de Boston 2023 : l’erreur du panneau de signalisation",
+    "content": "Lors du célèbre marathon de Boston, un panneau de signalisation mal placé a orienté les coureurs dans la mauvaise direction, les menant sur une route beaucoup plus longue que prévu. Des dizaines de coureurs ont perdu de précieuses minutes avant de retrouver le bon chemin. Cette erreur a mis en lumière des lacunes dans l'organisation et relancé le débat sur la sécurité des événements sportifs.",
+    "shortContent": "Lors du célèbre marathon de Boston, un panneau de signalisation mal placé a orienté les coureurs dans la mauvaise direction, les menant sur une route beaucoup plus longue que prévu.",
+    "slug": "marathon-boston-2023-erreur-panneau",
+    "image": "/images/marathon-boston.jpeg",
+    "date": "2024-10-16",
+    "category": "Sport"
+  },
+  {
+    "id": 3,
+    "title": "Une fusée bloquée sur Terre",
+    "content": "Lors du lancement d’une nouvelle fusée, une série d’erreurs humaines a mené à un résultat improbable : la fusée est restée clouée au sol. Le compte à rebours a défilé, les moteurs ont rugi, mais un problème mécanique l’a empêchée de décoller. Ce lancement raté a coûté des millions de dollars, mais il a aussi permis des avancées technologiques cruciales dans le domaine de la sécurité aérospatiale.",
+    "shortContent": "Lors du lancement d’une nouvelle fusée, une série d’erreurs humaines a mené à un résultat improbable : la fusée est restée clouée au sol.",
+    "slug": "fusee-bloquee-terre",
+    "image": "/images/fusee.jpeg",
+    "date": "2024-10-17",
+    "category": "Science"
+  },
+  {
+    "id": 4,
+    "title": "L'erreur de calcul qui sauve une entreprise",
+    "content": "Une erreur de calcul dans les prévisions financières d'une entreprise a initialement semé la panique parmi les investisseurs. Cependant, cette erreur a conduit à une réévaluation des stratégies de l'entreprise, aboutissant à des décisions qui ont finalement sauvé l'entreprise de la faillite. Ce retournement de situation a été salué comme un exemple de résilience et d'adaptation en affaires.",
+    "shortContent": "Une erreur de calcul dans les prévisions financières d'une entreprise a initialement semé la panique parmi les investisseurs.",
+    "slug": "erreur-calcul-sauve-entreprise",
+    "image": "/images/erreur-calcul.jpg",
+    "date": "2024-10-18",
+    "category": "Affaires"
+  },
+  {
+    "id": 5,
+    "title": "La confusion des billets d'avion mène à une aventure inoubliable",
+    "content": "Un couple a accidentellement réservé des billets d'avion pour la mauvaise destination. Au lieu de se rendre à Paris, ils ont atterri à Tokyo. Ce qui aurait pu être une catastrophe s'est transformé en une aventure inoubliable, remplie de découvertes culturelles et de nouvelles amitiés. Leur histoire est devenue virale, inspirant d'autres à embrasser l'inattendu.",
+    "shortContent": "Un couple a accidentellement réservé des billets d'avion pour la mauvaise destination. Au lieu de se rendre à Paris, ils ont atterri à Tokyo.",
+    "slug": "confusion-billets-aventure",
+    "image": "/images/aventure-tokyo.jpg",
+    "date": "2024-10-19",
+    "category": "Voyage"
+  }
+]

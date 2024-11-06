@@ -99,18 +99,18 @@ export default function ZibunityCard({
 
         {/* Boutons de contrôle */}
         <div className="w-full py-3 md:py-4 flex items-center justify-evenly sm:justify-center sm:gap-4 md:gap-6 bg-white md:rounded-b-xl">
-          <button className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-50 transition-colors">
+          <button className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full border-2 border-blue text-blue hover:bg-blue hover:text-white transition-colors">
             <Replay className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
           </button>
           <button
             onClick={onSwipeLeft}
-            className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full border-2 border-red-500 text-red-500 hover:bg-red-50 transition-colors"
+            className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full border-2 border-red text-red hover:bg-red hover:text-white transition-colors"
           >
             <Close className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
           </button>
           <button
             onClick={onSwipeRight}
-            className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full border-2 border-green-500 text-green-500 hover:bg-green-50 transition-colors"
+            className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full border-2 border-green text-green hover:bg-green hover:text-white transition-colors"
           >
             <Favorite className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
           </button>

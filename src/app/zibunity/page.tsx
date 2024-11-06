@@ -7,8 +7,8 @@ const ZibunityClient = dynamic(() => import("./ZibunityClient"), {
 });
 
 export const metadata: Metadata = {
-  title: "Zibunity - Découvrez des profils",
-  description: "Swipez et trouvez des profils intéressants sur Zibunity",
+  title: "Zibunity - Découvrez des ziboulettes",
+  description: "Swipez et trouvez des ziboulettes intéressants sur Zibunity",
 };
 
 const initialCards: Card[] = [

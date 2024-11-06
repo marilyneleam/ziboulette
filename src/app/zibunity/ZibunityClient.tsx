@@ -40,7 +40,7 @@ export default function ZibunityClient({ initialCards }: ZibunityClientProps) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen pt-16 pb-16 p-4">
         <h2 className="text-2xl font-bold mb-4">
-          Plus de profils disponibles !
+          Plus de Ziboulette disponibles !
         </h2>
         <button
           onClick={() => router.push("/favoris")}

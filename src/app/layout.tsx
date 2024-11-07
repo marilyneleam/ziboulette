@@ -2,7 +2,7 @@ import { arvo } from "../../public/fonts/fonts";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import "../styles/globals.css";
 import Navigation from "@/components/Navigation";
-// import { DefaultSeo } from "next-seo";
+import { DefaultSeo } from "next-seo";
 // import SEO from "../../next-seo.config";
 // import { headers } from "next/headers";
 

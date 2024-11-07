@@ -1,13 +1,13 @@
-import { NextSeo } from "next-seo";
+// import { NextSeo } from "next-seo";
 import React from "react";
 
 export default function QuiSommesNous() {
   return (
     <div className="p-8">
-      <NextSeo
+      {/* <NextSeo
         title={`Ziboulette - Qui sommes-nous ?`}
         description="Découvrez qui se cache derrière Ziboulette et notre mission"
-      />
+      /> */}
       <h1 className="text-3xl font-bold mb-8">Qui sommes-nous ?</h1>
 
       {/* Mission Section */}

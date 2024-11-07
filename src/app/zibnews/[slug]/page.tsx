@@ -2,7 +2,6 @@ import { Container } from "@mui/material";
 import { IZibnewsPost } from "../../../types/IZibPost";
 import zibnewsData from "../../../zibnews.json";
 import Image from "next/image";
-import { NextSeo } from "next-seo";
 
 interface Params {
   params: { slug: string };
@@ -13,21 +12,6 @@ const postZibNews = async ({ params }: Params) => {
   const post: IZibnewsPost = await fetchZibnewsPosts(slug);
   return (
     <Container>
-      <NextSeo
-        title={`Ziboulette - ${post.title}`}
-        description={post.shortContent}
-        openGraph={{
-          title: post.title,
-          description: post.shortContent,
-          url: `http://ziboulette.fr/zibnews/${post.slug}`,
-          images: [
-            {
-              url: post.image,
-              alt: post.title,
-            },
-          ],
-        }}
-      />
       <article>
         <header>
           <h1 className="text-3xl md:text-4xl text-left mt-4">{post.title}</h1>

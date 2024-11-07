@@ -4,10 +4,15 @@ import { Box, Container } from "@mui/material";
 import React from "react";
 import zibnewsData from "../../zibnews.json";
 import HighlightedCard from "../../components/highlightedCard/HighlightedCard";
+// import { NextSeo } from "next-seo";
 
 const Zibnews: React.FC = () => {
   return (
     <Container>
+      {/* <NextSeo
+        title="Ziboulette - Zibnews"
+        description="Consultez des nouvelles complètement improbables sur Zibnews"
+      /> */}
       <Container className="!p-0 flex flex-col md:flex-row md:gap-4">
         <Container className="!p-0 md:flex md:flex-[2_2_0%] md:flex-col">
           <Box>

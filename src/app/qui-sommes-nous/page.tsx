@@ -1,13 +1,14 @@
-// import { NextSeo } from "next-seo";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Ziboulette - Qui sommes-nous ?",
+  description: "Découvrez l'équipe et la mission de Ziboulette",
+};
 
 export default function QuiSommesNous() {
   return (
     <div className="p-8">
-      {/* <NextSeo
-        title={`Ziboulette - Qui sommes-nous ?`}
-        description="Découvrez qui se cache derrière Ziboulette et notre mission"
-      /> */}
       <h1 className="text-3xl font-bold mb-8">Qui sommes-nous ?</h1>
 
       {/* Mission Section */}

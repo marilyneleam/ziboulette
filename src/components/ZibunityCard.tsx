@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { useSwipeable } from "react-swipeable";
 import type { Card } from "@/types/card";
-import { Close, Favorite, Replay } from "@mui/icons-material";
+// import { Close, Favorite, Replay } from "@mui/icons-material";
 
 interface ZibunityCardProps {
   card: Card;
@@ -98,7 +98,7 @@ export default function ZibunityCard({
         </div>
 
         {/* Boutons de contrôle */}
-        <div className="w-full py-3 md:py-4 flex items-center justify-evenly sm:justify-center sm:gap-4 md:gap-6 bg-white md:rounded-b-xl">
+        {/* <div className="w-full py-3 md:py-4 flex items-center justify-evenly sm:justify-center sm:gap-4 md:gap-6 bg-white md:rounded-b-xl">
           <button className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full border-2 border-blue text-blue hover:bg-blue hover:text-white transition-colors">
             <Replay className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
           </button>
@@ -114,10 +114,10 @@ export default function ZibunityCard({
           >
             <Favorite className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
           </button>
-        </div>
+        </div> */}
 
         {/* Indicateurs de swipe */}
-        <div className="absolute top-4 sm:top-6 md:top-8 left-4 sm:left-6 md:left-8 right-4 sm:right-6 md:right-8 flex items-center justify-between pointer-events-none">
+        {/* <div className="absolute top-4 sm:top-6 md:top-8 left-4 sm:left-6 md:left-8 right-4 sm:right-6 md:right-8 flex items-center justify-between pointer-events-none">
           {offsetX < -50 && (
             <div className="bg-red-500 p-2 sm:p-3 md:p-4 rounded-full">
               <Close className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white" />
@@ -128,7 +128,7 @@ export default function ZibunityCard({
               <Favorite className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white" />
             </div>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -1,33 +1,33 @@
 "use server";
 
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import React from "react";
 import zibnewsData from "../../zibnews.json";
-import HighlightedCard from "../../components/highlightedCard/HighlightedCard";
-// import { NextSeo } from "next-seo";
+import HighlightedCard from "@/components/HighlightedCard";
 
 const Zibnews: React.FC = () => {
+
   return (
-    <Container>
-      {/* <NextSeo
-        title="Ziboulette - Zibnews"
-        description="Consultez des nouvelles complètement improbables sur Zibnews"
-      /> */}
-      <Container className="!p-0 flex flex-col md:flex-row md:gap-4">
-        <Container className="!p-0 md:flex md:flex-[2_2_0%] md:flex-col">
-          <Box>
-            <h2 className="text-xl md:text-2xl text-center mt-4">
-              Dernières Zibnews
-            </h2>
-            <Box className="flex gap-4 flex-col mt-4">
-              {zibnewsData.slice(0, 1000).map((post) => (
-                <HighlightedCard post={post} key={post.id} />
-              ))}
-            </Box>
+      <Box className="p-8">
+          <h1 className="text-3xl font-bold mb-8">Zibnews</h1>
+
+          {/* Dernière zibnews Section */}
+          <Box className="bg-white rounded-xl shadow-lg p-8">
+              <h2 className="text-xl font-bold text-primary mb-6">
+                  Dernières actualités
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {zibnewsData.slice(0, 4).map((post) => (
+                      <div
+                          key={post.id}
+                          className="hover:shadow-md transition-shadow duration-300"
+                      >
+                          <HighlightedCard post={post} />
+                      </div>
+                  ))}
+              </div>
           </Box>
-        </Container>
-      </Container>
-    </Container>
+      </Box>
   );
 };
 

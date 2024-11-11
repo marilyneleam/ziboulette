@@ -1,18 +1,40 @@
-import { Metadata } from "next";
+import { Box } from "@mui/material";
+import type { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Ziboulette - Qui sommes-nous ?",
-  description: "Découvrez l'équipe et la mission de Ziboulette",
-};
+        title: "Qui sommes-nous ?",
+        description: "Présentation de l'équipe et de la mission de Ziboulette",
+        openGraph: {
+            title: "Qui sommes-nous ?",
+            description:
+                "Présentation de l'équipe et de la mission de Ziboulette",
+            url: "/qui-sommes-nous",
+            images: [
+                {
+                    url: "/images/qui-sommes-nous.jpg",
+                    width: 1200,
+                    height: 630,
+                    alt: "Équipe Ziboulette",
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: "Qui sommes-nous ?",
+            description:
+                "Présentation de l'équipe et de la mission de Ziboulette",
+            images: ["/images/qui-sommes-nous.jpg"],
+        },
+    };
 
 export default function QuiSommesNous() {
   return (
-    <div className="p-8">
+    <Box className="p-8">
       <h1 className="text-3xl font-bold mb-8">Qui sommes-nous ?</h1>
 
       {/* Mission Section */}
-      <section className="bg-white rounded-xl shadow-lg p-8 mb-8">
+      <Box className="bg-white rounded-xl shadow-lg p-8 mb-8">
         <h2 className="text-3xl font-bold text-primary mb-6">Notre Mission</h2>
         <p className="text-lg text-gray-700 mb-6">
           Chez Ziboulette, nous révolutionnons la façon de consommer
@@ -30,10 +52,10 @@ export default function QuiSommesNous() {
             Incroyablement Bizarres)
           </li>
         </ul>
-      </section>
+      </Box>
 
       {/* Concept Section */}
-      <section className="bg-white rounded-xl shadow-lg p-8 mb-8">
+      <Box className="bg-white rounded-xl shadow-lg p-8 mb-8">
         <h2 className="text-3xl font-bold text-primary mb-6">
           Le Concept Ziboulette
         </h2>
@@ -53,10 +75,10 @@ export default function QuiSommesNous() {
             Un ton décalé mais respectueux pour traiter l&apos;information
           </li>
         </ul>
-      </section>
+      </Box>
 
       {/* Values Section */}
-      <section className="bg-white rounded-xl shadow-lg p-8 mb-8">
+      <Box className="bg-white rounded-xl shadow-lg p-8 mb-8">
         <h2 className="text-3xl font-bold text-primary mb-8">Nos Valeurs</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-zib-light-gray rounded-lg p-6 text-center hover:shadow-md transition-shadow duration-300">
@@ -82,10 +104,10 @@ export default function QuiSommesNous() {
             <p className="text-gray-700">Une information vérifiée et fiable</p>
           </div>
         </div>
-      </section>
+      </Box>
 
       {/* Team Section */}
-      <section className="bg-white rounded-xl shadow-lg p-8 mb-8">
+      <Box className="bg-white rounded-xl shadow-lg p-8 mb-8">
         <h2 className="text-3xl font-bold text-primary mb-8">L&apos;Équipe</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-zib-light-gray rounded-lg p-8 text-center hover:-translate-y-1 transition-transform duration-300">
@@ -115,10 +137,10 @@ export default function QuiSommesNous() {
             </p>
           </div>
         </div>
-      </section>
+      </Box>
 
       {/* Join Section */}
-      <section className="bg-white rounded-xl shadow-lg p-8 text-center">
+      <Box className="bg-white rounded-xl shadow-lg p-8 text-center">
         <h2 className="text-3xl font-bold text-primary mb-6">
           Rejoignez l&apos;Aventure !
         </h2>
@@ -133,7 +155,7 @@ export default function QuiSommesNous() {
         >
           Découvrir Ziboulette
         </a>
-      </section>
-    </div>
+      </Box>
+    </Box>
   );
 }

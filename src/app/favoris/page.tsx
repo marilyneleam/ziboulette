@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Card } from "@/types/card";
+import { Box } from "@mui/material";
 
 export default function FavorisPage() {
   const [favorites, setFavorites] = useState<Card[]>([]);
@@ -16,7 +17,7 @@ export default function FavorisPage() {
   }, []);
 
   return (
-    <div className="p-8">
+    <Box className="p-8">
       <h1 className="text-3xl font-bold mb-8">Mes Favoris</h1>
 
       {favorites.length === 0 ? (
@@ -60,6 +61,6 @@ export default function FavorisPage() {
           ))}
         </div>
       )}
-    </div>
+    </Box>
   );
 }

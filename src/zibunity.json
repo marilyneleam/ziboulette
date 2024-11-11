@@ -6,7 +6,8 @@
         "slug": "assistant-ia-angoisse-dev",
         "image": "/boulette.jpg",
         "date": "2024-10-15",
-        "category": "Technologie"
+        "category": "Technologie",
+		"tags": ["IA", "Développement"]
     },
     {
         "id": 2,

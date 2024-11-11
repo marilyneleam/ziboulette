@@ -4,7 +4,10 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { ICard } from "@/types/ICard";
+<<<<<<< HEAD
 import { Box } from "@mui/material";
+=======
+>>>>>>> 33f4d54 (new footer and middleware)
 
 export default function FavorisPage() {
   const [favorites, setFavorites] = useState<ICard[]>([]);

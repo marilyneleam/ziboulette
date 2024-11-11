@@ -1,5 +1,6 @@
 // "use client";
 
+<<<<<<< HEAD
 // import React, { useState, useCallback } from "react";
 // import ZibunityCard from "@/components/ZibunityCard";
 // import { useRouter } from "next/navigation";
@@ -17,6 +18,24 @@
 //   const [currentIndex, setCurrentIndex] = useState(0);
 //   const [favorites, setFavorites] = useState<Card[]>([]);
 //   const router = useRouter();
+=======
+import React, { useState, useCallback } from "react";
+import ZibunityCard from "@/components/ZibunityCard";
+import { useRouter } from "next/navigation";
+import type { ICard } from "../../types/ICard";
+
+interface ZibunityClientProps {
+  initialCards: ICard[];
+}
+
+export default function ZibunityClient({ initialCards }: ZibunityClientProps) {
+  // const [cards, setCards] = useState<Card[]>(initialCards);
+  const cards: ICard[] = initialCards;
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [favorites, setFavorites] = useState<ICard[]>([]);
+  const router = useRouter();
+>>>>>>> 33f4d54 (new footer and middleware)
 
 //   const handleSwipeLeft = useCallback(() => {
 //     setCurrentIndex((prev) => prev + 1);

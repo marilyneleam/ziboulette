@@ -3,6 +3,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import "../styles/globals.css";
 import Navigation from "@/components/Navigation";
 import { Metadata } from "next";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://ziboulette.fr'),
@@ -36,6 +37,7 @@ export default function RootLayout({
           <Navigation />
           <main className="lg:pl-64 md:pl-16 pb-16 md:pb-0">{children}</main>
         </AppRouterCacheProvider>
+        <Footer />
       </body>
     </html>
   );

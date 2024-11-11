@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import type { Card } from "@/types/card";
+import type { ICard } from "@/types/ICard";
 import { Box } from "@mui/material";
 
 export default function FavorisPage() {
-  const [favorites, setFavorites] = useState<Card[]>([]);
+  const [favorites, setFavorites] = useState<ICard[]>([]);
 
   useEffect(() => {
     const storedFavorites = JSON.parse(

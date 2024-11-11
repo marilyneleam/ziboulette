@@ -3,11 +3,11 @@
 import React from "react";
 import Image from "next/image";
 import { useSwipeable } from "react-swipeable";
-import type { Card } from "@/types/card";
+import type { ICard } from "@/types/ICard";
 // import { Close, Favorite, Replay } from "@mui/icons-material";
 
 interface ZibunityCardProps {
-  card: Card;
+  card: ICard;
   onSwipeLeft: () => void;
   onSwipeRight: () => void;
   isLast: boolean;

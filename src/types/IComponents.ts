@@ -1,3 +1,3 @@
-export interface CustomProps {
+export interface ICustomProps {
     className?: string;
 }

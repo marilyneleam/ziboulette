@@ -2,7 +2,6 @@ import { Container } from "@mui/material";
 import { IZibnewsPost } from "../../../types/IZibPost";
 import zibnewsData from "../../../zibnews.json";
 import Image from "next/image";
-import Head from "next/head";
 import { Metadata, ResolvingMetadata } from "next";
 
 interface Params {
@@ -36,10 +35,6 @@ const postZibNews = async ({ params }: Params) => {
   const post: IZibnewsPost = await fetchZibnewsPosts(slug);
   return (
     <>
-      <Head>
-        <title>{post.title} - Zibnews</title>
-        <meta name="description" content={post.shortContent} />
-      </Head>
       <Container>
         <article>
           <header>

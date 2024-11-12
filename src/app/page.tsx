@@ -49,7 +49,6 @@ export default async function Home() {
               ))}
             </Box>
           </Box>
-<<<<<<< HEAD
         </Box>
 
         {/* Colonne droite - Zibunity */}
@@ -76,11 +75,6 @@ export default async function Home() {
         </Box>
       </Box>
     </Box>
-=======
-        </Container>
-      </Container>
-    </Container>
->>>>>>> 33f4d54 (new footer and middleware)
   );
 }
 

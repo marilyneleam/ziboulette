@@ -4,11 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { useSwipeable } from "react-swipeable";
 import type { ICard } from "@/types/ICard";
-<<<<<<< HEAD
 // import { Close, Favorite, Replay } from "@mui/icons-material";
-=======
-import { Close, Favorite, Replay } from "@mui/icons-material";
->>>>>>> 33f4d54 (new footer and middleware)
 
 interface ZibunityCardProps {
   card: ICard;

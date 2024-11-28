@@ -4,12 +4,12 @@ import {
   IZibnewsPost,
   IZibunityPost,
 } from "../types/IZibPost";
-import { CustomProps } from "../types/IComponents";
+import { ICustomProps } from "../types/IComponents";
 
 const HighlightedCard = ({
   post,
   className,
-}: { post: IZibnewsPost | IZibunityPost } & CustomProps) => {
+}: { post: IZibnewsPost | IZibunityPost } & ICustomProps) => {
   return (
 	<Box>
 		      <Card component="article"

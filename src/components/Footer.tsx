@@ -1,83 +1,52 @@
-import React from "react";
+import { footerItems } from "@/types/IRoute";
 import Link from "next/link";
-import { navigationItems } from "../types/IRoute";
 
-export default function Footer() {
-  return (
-    <footer className="bg-gray-800 text-gray-200 py-8 lg:pl-64 md:pl-16 pb-16 md:pb-0">
-      {/* Section principale du footer */}
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Informations de l'entreprise */}
-          <div>
-            <h2 className="text-xl mb-4">À propos de nous</h2>
-            <address className="not-italic">
-              <p>Ziboulette</p>
-              <p>28 Pl. de la Bourse</p>
-              <p>75002 Paris, France</p>
-              <p>Tél: +33 1 23 45 67 89</p>
-            </address>
-          </div>
+const Footer = () => {
+    const copyright = (
+        <>
+            © 2024 Ziboulette - Design et Developped with{" "}
+            <span className="text-red-500">❤</span> by Antony & Marilyne
+        </>
+    );
 
-          {/* Navigation principale */}
-          <div>
-            <h2 className="text-xl mb-4">Navigation</h2>
-            <nav>
-              <ul className="space-y-2">
-                {navigationItems.map((item) => {
-                  const Icon = item.icon;
+    return (
+        <footer className="bg-primary-200 text-gray-800">
+            {/* Sections principales du footer */}
+            <div className="container mx-auto py-8 px-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {footerItems.map((col) => (
+                        <div key={col.name}>
+                            <h4 className="font-bold text-lg mb-4">
+                                {col.name}
+                            </h4>
+                            <ul className="space-y-2">
+                                {col.menu.map((item) => (
+                                    <li key={item.text}>
+                                        <Link
+                                            href={item.href}
+                                            className="text-sm text-gray-600 hover:text-blue-500 transition"
+                                        >
+                                            <span
+                                                dangerouslySetInnerHTML={{
+                                                    __html: item.text,
+                                                }}
+                                            />
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            </div>
 
-                  return (
-                    <li key={item.name}>
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        aria-label={item.ariaLabel}
-                        className="hover:text-white"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </nav>
-          </div>
+            <div className="border-t border-primary-400"></div>
 
-          {/* Liens légaux */}
-          <div>
-            <h2 className="text-xl mb-4">Informations légales</h2>
-            <nav>
-              <ul className="space-y-2">
-                <li>
-                  <a href="/mentions-legales" className="hover:text-white">
-                    Mentions légales
-                  </a>
-                </li>
-                <li>
-                  <a href="/cgv" className="hover:text-white">
-                    CGV
-                  </a>
-                </li>
-                <li>
-                  <a href="/plan-du-site" className="hover:text-white">
-                    Plan du site
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
+            <div className="py-4 bg-primary-300">
+                <p className="text-center text-sm">{copyright}</p>
+            </div>
+        </footer>
+    );
+};
 
-        {/* Copyright et microdonnées */}
-        <div className="mt-8 py-4 border-t border-gray-700 text-center">
-          <p itemScope itemType="http://schema.org/Organization">
-            <span>© {new Date().getFullYear()} </span>
-            <span itemProp="name">Ziboulette</span>
-            <span> - Tous droits réservés</span>
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
-}
+export default Footer;

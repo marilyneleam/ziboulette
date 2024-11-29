@@ -4,81 +4,90 @@
         "title": "L'assistant IA, ou l'angoisse du dev",
         "content": "Aujourd'hui, j'ai tellement utilisé d'assistants IA pour mon code que je n'ai même plus l'impression de comprendre mon propre projet, Vive l'efficacité… et l'angoisse, ZIB",
         "slug": "assistant-ia-angoisse-dev",
-        "image": "/boulette.jpg",
+        "image": "/images/assistant-ia.webp",
         "date": "2024-10-15",
         "category": "Technologie",
-		"tags": ["IA", "Développement"]
+        "tags": ["IA", "Développement"],
+        "postType": "zibunity"
     },
     {
         "id": 2,
         "title": "La peur du chat ?",
         "content": "Aujourd'hui, ma livraison express de pièces pour mon PC est bloquée, La raison ? Le livreur a peur des chiens et refuse de sonner, même si j'ai un chat, ZIB",
         "slug": "peur-chat",
-        "image": "/boulette.jpg",
+        "image": "/images/peur-chat.webp",
         "date": "2024-10-15",
-        "category": "Animaux"
+        "category": "Animaux",
+        "postType": "zibunity"
     },
     {
         "id": 3,
         "title": "L'écran partagé, piège fatal",
         "content": "Aujourd'hui, lors d'une présentation en visio, je partage mon écran, Oubliant que mon groupe de discussion est ouvert, tout le monde a vu mes potes commenter mon patron, ZIB",
         "slug": "ecran-partage-piege-fatal",
-        "image": "/boulette.jpg",
+        "image": "/images/share-screen.webp",
         "date": "2024-10-15",
-        "category": "Travail"
+        "category": "Travail",
+        "postType": "zibunity"
     },
     {
         "id": 4,
         "title": "Le café bug de l'année",
         "content": "Aujourd'hui, je passe des heures sur un bug… pour découvrir que mon café renversé a éteint mon clavier, J'ai fait semblant de déboguer en vrai, ZIB",
         "slug": "cafe-bug-annee",
-        "image": "/boulette.jpg",
+        "image": "/images/coffee-bug.webp",
         "date": "2024-10-15",
-        "category": "Travail"
+        "category": "Travail",
+        "postType": "zibunity"
     },
     {
         "id": 5,
         "title": "L'IA qui vieillit les crushs",
         "content": "Aujourd'hui, en voulant impressionner mon crush avec mes skills en IA, je l'ai laissée écrire son prénom dans une app pour qu'elle devine son âge, L'algorithme l'a vieillie de 10 ans, ZIB",
         "slug": "ia-vieillit-crushs",
-        "image": "/boulette.jpg",
+        "image": "/images/ia-old.webp",
         "date": "2024-10-15",
-        "category": "Technologie"
+        "category": "Technologie",
+        "postType": "zibunity"
     },
     {
         "id": 6,
         "title": "Le chat qui code",
         "content": "Aujourd'hui, mon chat a marché sur mon clavier, et a écrit plus de lignes de code que moi en une semaine, ZIB",
         "slug": "chat-code",
-        "image": "/boulette.jpg",
+        "image": "/images/cat-code.webp",
         "date": "2024-10-15",
-        "category": "Animaux"
+        "category": "Animaux",
+        "postType": "zibunity"
     },
     {
         "id": 7,
         "title": "L'erreur de cuisine qui sent fort",
         "content": "Aujourd'hui, j'ai voulu impressionner ma copine en cuisine, mais j'ai confondu le sucre avec le sel dans le dessert. Maintenant, elle me rappelle cet 'échec cuisant' à chaque fois que j'approche la cuisine, ZIB",
         "slug": "erreur-cuisine-sent-fort",
-        "image": "/boulette.jpg",
+        "image": "/images/kitchen.webp",
         "date": "2024-10-15",
-        "category": "Cuisine"
+        "category": "Cuisine",
+        "postType": "zibunity"
     },
     {
         "id": 8,
         "title": "Quand le télétravail tourne mal",
         "content": "Aujourd'hui, en pleine présentation importante en visio, mon chat a renversé mon café sur mon clavier. L'ordinateur a planté et mes collègues ne me laisseront jamais oublier cet incident, ZIB",
         "slug": "teletravail-tourne-mal",
-        "image": "/boulette.jpg",
+        "image": "/images/cat-coffee.webp",
         "date": "2024-10-15",
-        "category": "Travail"
+        "category": "Travail",
+        "postType": "zibunity"
     },
     {
         "id": 9,
         "title": "Un GPS trop efficace",
         "content": "Aujourd'hui, en suivant mon GPS pour aller à un mariage, je me suis retrouvé en plein milieu d'un champ de vaches. Arrivé en retard avec un costume plein de boue, ZIB",
         "slug": "gps-trop-efficace",
-        "image": "/boulette.jpg",
+        "image": "/images/gps-cow.webp",
         "date": "2024-10-15",
-        "category": "Transport"
+        "category": "Transport",
+        "postType": "zibunity"
     }
 ]

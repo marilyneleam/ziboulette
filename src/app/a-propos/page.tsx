@@ -32,7 +32,7 @@ export default function APropos() {
   return (
       <Container>
           <Box className="p-8">
-              <h1 className="hidden *:text-3xl font-bold mb-8">A propos</h1>
+              <h1 className="sr-only">A propos</h1>
 
               {/* Mission Section */}
               <Box className="bg-white rounded-xl shadow-lg p-8 mb-8">

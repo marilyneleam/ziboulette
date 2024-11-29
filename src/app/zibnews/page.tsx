@@ -1,34 +1,101 @@
 "use server";
 
-import { Box, Container } from "@mui/material";
+import {
+    Box,
+    Container,
+    Card,
+    CardContent,
+    CardMedia,
+    Link,
+    Typography,
+} from "@mui/material";
 import React from "react";
 import zibnewsData from "../../zibnews.json";
-import HighlightedCard from "@/components/HighlightedCard";
+import { IZibnewsPost } from "@/types/IZibPost";
 
 const Zibnews: React.FC = () => {
+    const transformedData: IZibnewsPost[] = zibnewsData.map((post) => ({
+        ...post,
+        postType: "zibnews",
+    }));
 
-  return (
-      <Box className="p-8">
-          <h1 className="text-3xl font-bold mb-8">Zibnews</h1>
+    const mainArticle = transformedData[0];
+    const otherArticles = transformedData.slice(1, 5);
 
-          {/* Dernière zibnews Section */}
-          <Box className="bg-white rounded-xl shadow-lg p-8">
-              <h2 className="text-xl font-bold text-primary mb-6">
-                  Dernières actualités
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                  {zibnewsData.slice(0, 4).map((post) => (
-                      <div
-                          key={post.id}
-                          className="hover:shadow-md transition-shadow duration-300"
-                      >
-                          <HighlightedCard post={post} />
-                      </div>
-                  ))}
-              </div>
-          </Box>
-      </Box>
-  );
+    return (
+        <Container>
+            <Box className="p-8">
+                <h1 className="sr-only">Zibnews</h1>
+                {/* Article Principal */}
+                <Box className="mb-12">
+                    <Card
+                        component={Link}
+                        href={`/zibnews/${mainArticle.slug}`}
+                        className="grid grid-cols-1 md:grid-cols-2 gap-8 rounded-xl overflow-hidden"
+                        sx={{ textDecoration: "none" }}
+                    >
+                        <Box className="relative h-[300px] md:h-[400px] overflow-hidden">
+                            <CardMedia
+                                component="img"
+                                image={mainArticle.image}
+                                alt={mainArticle.title}
+                                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                            />
+                        </Box>
+                        <CardContent className="p-6 flex flex-col justify-center">
+                            <Typography
+                                variant="h4"
+                                component="h2"
+                                className="font-bold mb-4"
+                            >
+                                {mainArticle.title}
+                            </Typography>
+                            <Typography
+                                variant="body1"
+                                className="text-gray-600 mb-4"
+                            >
+                                {mainArticle.shortContent}
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Box>
+
+                {/* Grille d'articles */}
+                <Box className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {otherArticles.map((post) => (
+                        <Card
+                            key={post.id}
+                            className="rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:scale-105 transition-transform duration-300"
+                        >
+                            <Link
+                                href={`/zibnews/${post.slug}`}
+                                sx={{ textDecoration: "none" }}
+                            >
+                                <CardMedia
+                                    component="img"
+                                    image={post.image}
+                                    alt={post.title}
+                                    className="h-48 w-full object-cover"
+                                />
+                                <CardContent className="p-6">
+                                    <Typography
+                                        variant="h6"
+                                        component="h2"
+                                        className="font-bold mb-4 line-clamp-1 text-primary "
+                                    >
+                                        {post.title}
+                                    </Typography>
+                                    <button className="bg-primary-700 text-white m-4 px-4 py-2 rounded-full hover:bg-teal-600 transition-colors">
+                                        Read More
+                                    </button>
+                                </CardContent>
+                            </Link>
+                        </Card>
+                    ))}
+                </Box>
+            </Box>
+        </Container>
+    );
 };
 
 export default Zibnews;

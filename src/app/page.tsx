@@ -1,88 +1,151 @@
-"use server";
-
-import { Box, Card, CardContent, CardMedia, Link } from "@mui/material";
-import { IZibnewsPost, IZibunityPost } from "../types/IZibPost";
+import {
+	Container,
+    Box,
+    Card,
+    CardContent,
+    CardMedia,
+    Link,
+    Typography,
+} from "@mui/material";
 import zibnewsData from "../zibnews.json";
 import zibunityData from "../zibunity.json";
-import HighlightedCard from "@/components/HighlightedCard";
 
-export default async function Home() {
-  const latestZibnewsPosts = await fetchLatestZibnewsPosts();
-  const latestZibunityPosts = await fetchLatestZibunityPosts();
+export default function Home() {
+    const limitedZibnews = zibnewsData.slice(0, 5);
+    const limitedZibunity = zibunityData.slice(0, 4);
 
-  return (
-    <Box className="h-screen p-8">
-      <h1 className="text-3xl font-bold mb-8">Accueil</h1>
+    return (
+        <Container className="block">
+            <h1 className="sr-only">Accueil</h1>
+            <Box className="p-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+                {/* Section Zibnews - pleine largeur en tablette, 2/3 en desktop */}
+                <Box className="lg:col-span-2 flex flex-col gap-6">
+                    {/* Titre de la section Zibnews */}
+                    <Typography
+                        variant="h4"
+                        component="h2"
+                        className="font-bold text-primary"
+                    >
+                        Zibnews
+                    </Typography>
 
-      <Box className="bg-white rounded-xl shadow-lg p-8 grid grid-cols-1 lg:grid-cols-3 gap-4">
-        {/* Colonne gauche et centrale (2/3) */}
-        <Box className="lg:col-span-2 flex flex-col gap-4">
-          {/* Article à la une */}
-          <Box className="h-[52vh]">
-            {zibnewsData.slice(0, 1).map((post) => (
-              <Card key={post.id} className="h-full">
-                <Link
-                  href={`/zibnews/${post.slug}`}
-                  underline="none"
-                  className="!text-black h-full flex flex-col"
-                >
-                  <CardMedia image={post.image} className="w-full flex-1" />
-                  <CardContent className="py-3">
-                    <h1 className="text-xl font-bold line-clamp-2">
-                      {post.title}
-                    </h1>
-                  </CardContent>
-                </Link>
-              </Card>
-            ))}
-          </Box>
+                    {/* Article featured */}
+                    <Card className="rounded-lg shadow-md overflow-hidden h-[300px] lg:h-[400px] relative hover:shadow-xl hover:scale-105 transition-transform duration-300">
+                        <Link
+                            href={`/zibnews/${limitedZibnews[0].slug}`}
+                            underline="none"
+                            className="block h-full relative"
+                        >
+                            {/* Image et gradient */}
+                            <CardMedia
+                                image={limitedZibnews[0].image}
+                                className="h-full w-full object-cover absolute inset-0"
+                            />
+                            {/* Gradient visible sur tous les écrans */}
+                            <Box className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-75" />
 
-          {/* Dernières Zibnews */}
-          <Box className="h-[23vh]">
-            <Box className="grid grid-cols-2 gap-4 h-full">
-              {latestZibnewsPosts.slice(1, 3).map((post) => (
-                <HighlightedCard
-                  post={post}
-                  key={post.id}
-                  className="h-full !aspect-auto"
-                />
-              ))}
+                            {/* Contenu (Titre et texte court) */}
+                            <CardContent className="absolute bottom-0 left-0 text-white z-10">
+                                <Typography
+                                    variant="h6"
+                                    component="h3"
+                                    className="font-bold text-white text-xl md:text-2xl line-clamp-2"
+                                >
+                                    {limitedZibnews[0].title}
+                                </Typography>
+                                <Typography
+                                    variant="body2"
+                                    className="text-gray-200 mt-2 line-clamp-3"
+                                >
+                                    {limitedZibnews[0].shortContent}
+                                </Typography>
+                            </CardContent>
+                        </Link>
+                    </Card>
+
+                    {/* Derniers articles Zibnews */}
+                    <Box className="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1">
+                        {limitedZibnews.slice(1).map((post) => (
+                            <Card
+                                key={post.id}
+                                className="rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:scale-105 transition-transform duration-300"
+                            >
+                                <Link
+                                    href={`/zibnews/${post.slug}`}
+                                    underline="none"
+                                >
+                                    <CardMedia
+                                        image={post.image}
+                                        className="h-[160px] lg:h-[140px] w-full object-cover"
+                                    />
+                                    <CardContent>
+                                        <Typography
+                                            variant="h6"
+                                            component="h3"
+                                            className="font-bold text-primary-900 line-clamp-2"
+                                        >
+                                            {post.title}
+                                        </Typography>
+                                        <Typography
+                                            variant="body2"
+                                            className="text-gray-600 line-clamp-3 mt-2"
+                                        >
+                                            {post.shortContent}
+                                        </Typography>
+                                    </CardContent>
+                                </Link>
+                            </Card>
+                        ))}
+                    </Box>
+                </Box>
+
+                {/* Section Zibunity - pleine largeur en tablette, 1/3 en desktop */}
+                <Box className="lg:col-span-1 flex flex-col gap-6">
+                    {/* Titre de la section Zibunity */}
+                    <Typography
+                        variant="h4"
+                        component="h2"
+                        className="font-bold text-primary"
+                    >
+                        Zibunity
+                    </Typography>
+
+                    {/* Liste des Zibunity */}
+                    <Box className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
+                        {limitedZibunity.map((post) => (
+                            <Card
+                                key={post.id}
+                                className="rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:scale-105 transition-transform duration-300"
+                            >
+                                <Link
+                                    href={`/zibnews/${post.slug}`}
+                                    underline="none"
+                                >
+                                    <CardMedia
+                                        image={post.image}
+                                        className="h-[160px] lg:h-[140px] w-full object-cover"
+                                    />
+                                    <CardContent>
+                                        <Typography
+                                            variant="h6"
+                                            component="h3"
+                                            className="font-bold text-primary-900 line-clamp-2"
+                                        >
+                                            {post.title}
+                                        </Typography>
+                                        <Typography
+                                            variant="body2"
+                                            className="text-gray-600 line-clamp-3 mt-2"
+                                        >
+                                            {post.content}
+                                        </Typography>
+                                    </CardContent>
+                                </Link>
+                            </Card>
+                        ))}
+                    </Box>
+                </Box>
             </Box>
-          </Box>
-        </Box>
-
-        {/* Colonne droite - Zibunity */}
-        <Box className="lg:col-span-1 h-[76.5vh] flex flex-col gap-4">
-          {latestZibunityPosts.slice(0, 4).map((post) => (
-            //   <HighlightedCard
-            //       post={post}
-            //       key={post.id}
-            //       className="flex-1 h-[28vh]"
-            //   />
-            <Card key={post.id} className="flex-1 h-[28vh]">
-              <Link
-                href={`/zibunity/${post.slug}`}
-                underline="none"
-                className="!text-black h-full flex flex-col"
-              >
-                <CardContent className="p-4">
-                  <h1 className="text-xl font-bold">{post.title}</h1>
-                  <p className="text-sm">{post.content}</p>
-                </CardContent>
-              </Link>
-            </Card>
-          ))}
-        </Box>
-      </Box>
-    </Box>
-  );
-}
-
-async function fetchLatestZibnewsPosts(): Promise<IZibnewsPost[]> {
-  // Remplacez par une requête API ou une lecture de fichier
-  return zibnewsData;
-}
-
-async function fetchLatestZibunityPosts(): Promise<IZibunityPost[]> {
-  return zibunityData;
+        </Container>
+    );
 }

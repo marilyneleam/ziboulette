@@ -42,6 +42,7 @@ export const footerItems: IFooterItem[] = [
         menu: [
             { text: "28 place de la Bourse<br>75002 Paris", href: "/contact" },
             { text: "01 23 45 67 89", href: "tel:0123456789" },
+			{ text: "contact@ziboulette.fr", href: "mailto:contact@ziboulette.fr" },
         ],
     },
 	{
@@ -59,7 +60,6 @@ export const footerItems: IFooterItem[] = [
             { text: "Plan du site", href: "/plan-site" },
             { text: "FAQ", href: "/faq" },
             { text: "Retour en haut de page", href: "#top" },
-            { text: "Sections principales", href: "/sections" },
         ],
     },
     {
@@ -69,7 +69,7 @@ export const footerItems: IFooterItem[] = [
             { text: "Politique de confidentialité", href: "/confidentialite" },
             { text: "CGU", href: "/cgu" },
             { text: "Politique des cookies", href: "/cookies" },
-            { text: "Copyright et droit d'auteur", href: "/copyright" },
+            { text: "Accessibilité : partiellement conforme", href: "/accessibilite" },
         ],
     },
 ];

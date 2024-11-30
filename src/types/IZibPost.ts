@@ -7,6 +7,7 @@ export interface IZibnewsPost {
     image: string;
     date: string;
     category: string;
+    author: string;
 }
 
 export interface IZibunityPost {
@@ -14,6 +15,9 @@ export interface IZibunityPost {
     title: string;
     content: string;
     slug: string;
+    date: string;
+    author: string;
+    category: string;
 }
 
 type TPost = IZibnewsPost | IZibunityPost;

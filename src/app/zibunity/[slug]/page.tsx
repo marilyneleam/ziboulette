@@ -1,7 +1,6 @@
 import { Container } from "@mui/material";
-import { IZibnewsPost } from "../../../types/IZibPost";
-import zibnewsData from "../../../zibnews.json";
-import Image from "next/image";
+import { IZibunityPost } from "../../../types/IZibPost";
+import zibunityData from "../../../zibunity.json";
 import { Metadata, ResolvingMetadata } from "next";
 import { Article, WithContext } from "schema-dts";
 import Script from "next/script";
@@ -19,32 +18,28 @@ export async function generateMetadata(
   const slug = (await params).slug;
 
   // fetch data
-  const post = await fetchZibnewsPosts(slug);
-
-  // optionally access and extend (rather than replace) parent metadata
-  // const previousImages = (await parent);
+  const post = await fetchZibunityPosts(slug);
 
   return {
-    title: `${post.title} - Zibnews`,
+    title: `${post.title} - Zibunity`,
     category: post.category,
     authors: [{ name: "Anto" }],
-    description: post.shortContent,
+    description: post.content,
   };
 }
 
-const postZibNews = async ({ params }: Params) => {
+const postZibunity = async ({ params }: Params) => {
   const { slug } = await params;
-  const post: IZibnewsPost = await fetchZibnewsPosts(slug);
+  const post: IZibunityPost = await fetchZibunityPosts(slug);
   const jsonLd: WithContext<Article> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
-    image: post.image,
     author: {
       "@type": "Person",
       name: post.author,
     },
-    description: post.shortContent,
+    description: post.content,
     datePublished: post.date,
     publisher: {
       "@type": "Organization",
@@ -56,7 +51,7 @@ const postZibNews = async ({ params }: Params) => {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://www.ziboulette.fr/zibnews/${post.slug}`,
+      "@id": `https://www.ziboulette.fr/zibunity/${post.slug}`,
     },
   };
   return (
@@ -76,23 +71,14 @@ const postZibNews = async ({ params }: Params) => {
             <address>
               Par <a href="/auteur">Anto</a>
             </address>
-            <meta content={post.shortContent} />
+            <meta content={post.content} />
           </header>
-          <figure>
-            <Image
-              src={post.image}
-              alt={post.title}
-              width={600}
-              height={400}
-              loading="lazy"
-            />
-          </figure>
           <div>
             <p className="text-base">{post.content}</p>
           </div>
           <footer>
             <div>
-              <a href="/tag/zibnews">Zibnews</a>
+              <a href="/tag/zibunity">{post.category}</a>
             </div>
           </footer>
         </article>
@@ -101,9 +87,9 @@ const postZibNews = async ({ params }: Params) => {
   );
 };
 
-export default postZibNews;
+export default postZibunity;
 
-async function fetchZibnewsPosts(slug: string): Promise<IZibnewsPost> {
+async function fetchZibunityPosts(slug: string): Promise<IZibunityPost> {
   // Remplacez par une requête API ou une lecture de fichier
-  return zibnewsData.filter((post) => post.slug === slug)[0];
+  return zibunityData.filter((post) => post.slug === slug)[0];
 }

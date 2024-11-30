@@ -3,13 +3,13 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Home, Newspaper, Users, Info, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { navigationItems } from "../types/IRoute";
 
 export default function Navigation() {
   const mobileNavItems = navigationItems.filter(
-    (item) => item.name !== "Favoris",
+    (item) => item.name !== "Favoris"
   );
 
   const pathname = usePathname();
@@ -43,14 +43,14 @@ export default function Navigation() {
                                 <PlusSquare className="w-6 h-6" />
                             </Link> */}
 
-              <Link
+              {/* <Link
                 key="Favoris"
                 href="/favoris"
                 className={`p-2 rounded-full transition-colors ${isFavActive ? "text-primary" : "text-gray-800"}`}
                 aria-label="Voir mes favoris"
               >
                 <Heart className="w-6 h-6" />
-              </Link>
+              </Link> */}
             </div>
           </div>
         </header>

@@ -22,12 +22,12 @@ export const navigationItems: INavigationItem[] = [
         ariaLabel:
             "Découvrez de nouvelles anecdotes de la communauté sur Zibunity",
     },
-    {
-        name: "Favoris",
-        icon: Heart,
-        href: "/favoris",
-        ariaLabel: "Retrouvez vos Zibutity favoris",
-    },
+    // {
+    //     name: "Favoris",
+    //     icon: Heart,
+    //     href: "/favoris",
+    //     ariaLabel: "Retrouvez vos Zibutity favoris",
+    // },
     {
         name: "Qui sommes-nous",
         icon: Info,

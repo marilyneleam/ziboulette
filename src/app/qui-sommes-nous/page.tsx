@@ -1,36 +1,48 @@
 import { Box } from "@mui/material";
 import type { Metadata } from "next";
+import Script from "next/script";
 import React from "react";
+import { Organization, WithContext } from "schema-dts";
 
 export const metadata: Metadata = {
-        title: "Qui sommes-nous ?",
-        description: "Présentation de l'équipe et de la mission de Ziboulette",
-        openGraph: {
-            title: "Qui sommes-nous ?",
-            description:
-                "Présentation de l'équipe et de la mission de Ziboulette",
-            url: "/qui-sommes-nous",
-            images: [
-                {
-                    url: "/images/qui-sommes-nous.jpg",
-                    width: 1200,
-                    height: 630,
-                    alt: "Équipe Ziboulette",
-                },
-            ],
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: "Qui sommes-nous ?",
-            description:
-                "Présentation de l'équipe et de la mission de Ziboulette",
-            images: ["/images/qui-sommes-nous.jpg"],
-        },
-    };
+  title: "Qui sommes-nous ?",
+  description: "Présentation de l'équipe et de la mission de Ziboulette",
+  openGraph: {
+    title: "Qui sommes-nous ?",
+    description: "Présentation de l'équipe et de la mission de Ziboulette",
+    url: "/qui-sommes-nous",
+    images: [
+      {
+        url: "/images/qui-sommes-nous.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Équipe Ziboulette",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Qui sommes-nous ?",
+    description: "Présentation de l'équipe et de la mission de Ziboulette",
+    images: ["/images/qui-sommes-nous.jpg"],
+  },
+};
 
 export default function QuiSommesNous() {
+  const jsonLdData: WithContext<Organization> = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Ziboulette",
+    url: "https://www.ziboulette.fr/",
+    logo: "https://www.ziboulette.fr/logo.webp",
+  };
   return (
     <Box className="p-8">
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+        strategy="beforeInteractive"
+      />
       <h1 className="text-3xl font-bold mb-8">Qui sommes-nous ?</h1>
 
       {/* Mission Section */}

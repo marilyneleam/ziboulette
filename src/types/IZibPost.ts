@@ -12,14 +12,12 @@ export interface IZibnewsPost extends BasePost {
     shortContent: string;
     tags?: string[];
     postType: "zibnews";
+    author: string;
 }
 
 export interface IZibunityPost extends BasePost {
     tags?: string[];
     postType: "zibunity";
-}
-
-interface RawZibunityPost extends Omit<IZibunityPost, "postType"> {
 }
 
 type TPost = IZibnewsPost | IZibunityPost;

@@ -29,9 +29,9 @@ export const navigationItems: INavigationItem[] = [
             "Découvrez de nouvelles anecdotes de la communauté sur Zibunity",
     },
     {
-        name: "A propos",
+        name: "Qui sommes-nous ?",
         icon: Info,
-        href: "/a-propos",
+        href: "/qui-sommes-nous",
         ariaLabel: "En savoir plus sur Ziboulette et son équipe",
     },
 ];
@@ -42,23 +42,22 @@ export const footerItems: IFooterItem[] = [
         menu: [
             { text: "28 place de la Bourse<br>75002 Paris", href: "/contact" },
             { text: "01 23 45 67 89", href: "tel:0123456789" },
-			{ text: "contact@ziboulette.fr", href: "mailto:contact@ziboulette.fr" },
+            { text: "contact@ziboulette.fr", href: "mailto:contact@ziboulette.fr" },
         ],
     },
-	{
-		name: "Navigation",
-		menu: [
-			{ text: "Accueil", href: "/" },
-			{ text: "Zibnews", href: "/zibnews" },
-			{ text: "Zibunity", href: "/zibunity" },
-			{ text: "Qui sommes-nous", href: "/qui-sommes-nous" },
-		],
-	},
+    {
+        name: "Navigation",
+        menu: [
+            { text: "Accueil", href: "/" },
+            { text: "Zibnews", href: "/zibnews" },
+            { text: "Zibunity", href: "/zibunity" },
+            { text: "Qui sommes-nous ?", href: "/qui-sommes-nous" },
+        ],
+    },
     {
         name: "Liens utiles",
         menu: [
             { text: "Plan du site", href: "/plan-site" },
-            { text: "FAQ", href: "/faq" },
             { text: "Retour en haut de page", href: "#top" },
         ],
     },

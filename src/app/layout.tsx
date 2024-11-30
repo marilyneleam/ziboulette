@@ -6,12 +6,13 @@ import Foot from "../components/Footer";
 import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-	metadataBase: new URL('https://ziboulette.fr'),
-	title: {
-		default: "Ziboulette",
-		template: "%s | Ziboulette",
-	},
-	description: "Ziboulette, l'actualité qui déboule de façon ludique et accessible quotidiennement tout en partageant vos pires boulettes ZIB (Ziboulettes Incroyablement Bizarres)",
+  metadataBase: new URL("https://ziboulette.fr"),
+  title: {
+    default: "Ziboulette",
+    template: "%s | Ziboulette",
+  },
+  description:
+    "Ziboulette, l'actualité qui déboule de façon ludique et accessible quotidiennement tout en partageant vos pires boulettes ZIB (Ziboulettes Incroyablement Bizarres)",
   keywords:
     "Ziboulette, actu ludique, articles divertissants, nouvelles décalées, boulettes amusantes, ZIB, Ziboulettes Incroyablement Bizarres, partage de boulettes, VDM",
   robots: {

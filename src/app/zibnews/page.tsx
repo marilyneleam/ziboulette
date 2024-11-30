@@ -1,32 +1,72 @@
-"use server";
-
-import { Box, Container } from "@mui/material";
+import { Box, Container, Divider } from "@mui/material";
 import React from "react";
 import zibnewsData from "../../zibnews.json";
-import HighlightedCard from "../../components/highlightedCard/HighlightedCard";
-// import { NextSeo } from "next-seo";
+import { IZibnewsPost } from "@/types/IZibPost";
+import { CategoryCode, WithContext } from "schema-dts";
+import HighlightedCard from "../../components/HighlightedCard";
+import Script from "next/script";
+import { Metadata } from "next";
 
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Zibnews - Découvrez les dernières actualités sur Ziboulette",
+    description: "Découvrez les dernières actualités sur Ziboulette",
+  };
+}
 const Zibnews: React.FC = () => {
+  const transformedData: IZibnewsPost[] = zibnewsData.map((post) => ({
+    ...post,
+    postType: "zibnews",
+  }));
+  const jsonLdData: WithContext<CategoryCode> = {
+    "@context": "https://schema.org",
+    "@type": "CategoryCode",
+    name: "Ziboulette",
+    url: "https://www.ziboulette.fr/zibnews",
+  };
+  const groupedByCategory = Object.values(
+    transformedData.reduce(
+      (acc: { [key: string]: IZibnewsPost[] }, item: IZibnewsPost) => {
+        if (!acc[item.category]) {
+          acc[item.category] = [];
+        }
+        acc[item.category].push(item);
+        return acc;
+      },
+      {}
+    )
+  );
+
   return (
     <Container>
-      {/* <NextSeo
-        title="Ziboulette - Zibnews"
-        description="Consultez des nouvelles complètement improbables sur Zibnews"
-      /> */}
-      <Container className="!p-0 flex flex-col md:flex-row md:gap-4">
-        <Container className="!p-0 md:flex md:flex-[2_2_0%] md:flex-col">
-          <Box>
-            <h2 className="text-xl md:text-2xl text-center mt-4">
-              Dernières Zibnews
-            </h2>
-            <Box className="flex gap-4 flex-col mt-4">
-              {zibnewsData.slice(0, 1000).map((post) => (
-                <HighlightedCard post={post} key={post.id} />
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+        strategy="beforeInteractive"
+      />
+      {/* Dernière zibnews Section */}
+      <Box className="bg-white rounded-xl shadow-lg p-8">
+        <h1 className="text-xl font-bold text-primary mb-6">
+          Dernières actualités
+        </h1>
+        {groupedByCategory.map((category: IZibnewsPost[], index: number) => (
+          <div key={index} className="mb-4 last:mb-0">
+            <Divider textAlign="left">
+              <h2 className="text-lg font-bold mb-2">{category[0].category}</h2>
+            </Divider>
+            <div className="grid grid-rows-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {category.map((post: IZibnewsPost) => (
+                <div
+                  key={post.id}
+                  className="hover:shadow-md transition-shadow duration-300"
+                >
+                  <HighlightedCard post={post} className="h-full" />
+                </div>
               ))}
-            </Box>
-          </Box>
-        </Container>
-      </Container>
+            </div>
+          </div>
+        ))}
+      </Box>
     </Container>
   );
 };

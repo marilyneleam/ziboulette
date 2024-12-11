@@ -12,20 +12,11 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "Qui sommes-nous ?",
       description: "Présentation de l'équipe et de la mission de Ziboulette",
       url: "/qui-sommes-nous",
-      images: [
-        {
-          url: "/images/qui-sommes-nous.jpg",
-          width: 1200,
-          height: 630,
-          alt: "Équipe Ziboulette",
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: "Qui sommes-nous ?",
       description: "Présentation de l'équipe et de la mission de Ziboulette",
-      images: ["/images/qui-sommes-nous.jpg"],
     },
   };
 }

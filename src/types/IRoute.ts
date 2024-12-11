@@ -55,13 +55,6 @@ export const footerItems: IFooterItem[] = [
         ],
     },
     {
-        name: "Liens utiles",
-        menu: [
-            { text: "Plan du site", href: "/plan-site" },
-            { text: "Retour en haut de page", href: "#top" },
-        ],
-    },
-    {
         name: "Informations légales",
         menu: [
             { text: "Mentions légales", href: "/mentions-legales" },
